@@ -55,17 +55,17 @@ describe you).
 especially for first-time users.
 
 ## How would I improve the system?
-- • Improve model accuracy and efficiency:
+- Improve model accuracy and efficiency:
 - Currently, the decision tree is hand-coded and quite simplistic. To improve accuracy:
     - ▪ Train a real model using scikit-learn on a larger dataset of user responses and real labels.
     - ▪ Use quantized models (e.g., TFLite) for faster inference on embedded systems.
     - ▪ Add confidence thresholds to avoid "guessing" too early.
-- • Add sensors or enhance UX:
+- Add sensors or enhance UX:
     - ▪ Voice input using a microphone and wake-word detection (like “Sorting Hat, begin!”).
     - ▪ Add vibration motor or speaker for haptic or sound feedback after sorting.
     - ▪ Use a proximity or capacitive touch sensor to start the quiz when a hand approaches
 (no need for a power/reset button).
-- • Is decision tree still suitable?
+- Is decision tree still suitable?
 For the current setup (discrete inputs, small input space), the decision tree is ideal: fast, small
 memory footprint, easy to deploy.
 But if we add voice, gesture recognition, or sensor fusion, then:
