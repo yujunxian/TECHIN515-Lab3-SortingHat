@@ -43,34 +43,34 @@ OLED and also printed over serial.
 - `Lab 3 Report.pdf` — detailed writeup
 
 ## Discussion 
-## - Are all 10 questions necessary?  
+## Are all 10 questions necessary?  
 - Not necessarily. While having 10 questions helps balance the house prediction, some of them are
 quite similar in the kind of personality trait they capture. To streamline the user experience, I would
 consider removing the following:
-- • Q7. Preferred pet: This is mostly symbolic and doesn’t significantly reflect personality.
-- • Q9. What kind of friends do you like: This overlaps with Q1 (values) and Q5 (how friends
+- Q7. Preferred pet: This is mostly symbolic and doesn’t significantly reflect personality.
+- Q9. What kind of friends do you like: This overlaps with Q1 (values) and Q5 (how friends
 describe you).
-- • Q6. What to do with a mystery book: Interesting, but less impactful than others like Q4 or
+- Q6. What to do with a mystery book: Interesting, but less impactful than others like Q4 or
 - Q8. Reducing the quiz to 7 core questions would make it more enjoyable and faster to complete,
 especially for first-time users.
 
 ## How would I improve the system?
 - Improve model accuracy and efficiency:
 - Currently, the decision tree is hand-coded and quite simplistic. To improve accuracy:
-    - ▪ Train a real model using scikit-learn on a larger dataset of user responses and real labels.
-    - ▪ Use quantized models (e.g., TFLite) for faster inference on embedded systems.
-    - ▪ Add confidence thresholds to avoid "guessing" too early.
+    - Train a real model using scikit-learn on a larger dataset of user responses and real labels.
+    - Use quantized models (e.g., TFLite) for faster inference on embedded systems.
+    - Add confidence thresholds to avoid "guessing" too early.
 - Add sensors or enhance UX:
-    - ▪ Voice input using a microphone and wake-word detection (like “Sorting Hat, begin!”).
-    - ▪ Add vibration motor or speaker for haptic or sound feedback after sorting.
-    - ▪ Use a proximity or capacitive touch sensor to start the quiz when a hand approaches
+    - Voice input using a microphone and wake-word detection (like “Sorting Hat, begin!”).
+    - Add vibration motor or speaker for haptic or sound feedback after sorting.
+    - Use a proximity or capacitive touch sensor to start the quiz when a hand approaches
 (no need for a power/reset button).
 - Is decision tree still suitable?
 For the current setup (discrete inputs, small input space), the decision tree is ideal: fast, small
 memory footprint, easy to deploy.
 But if we add voice, gesture recognition, or sensor fusion, then:
-    - ▪ A decision tree won’t capture complex patterns well.
-    - ▪ I would switch to a small neural network, such as a quantized TFLite model with 1- 2 dense
+    - A decision tree won’t capture complex patterns well.
+    - I would switch to a small neural network, such as a quantized TFLite model with 1- 2 dense
 layers.
 - This way, we keep performance real-time while allowing more expressive input types.
 ---
